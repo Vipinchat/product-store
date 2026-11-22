@@ -1,0 +1,368 @@
+<section class="contact-section py-5">
+    <div class="container">
+
+        <div class="contact-header text-center mb-5" data-aos="fade-up">
+            <span class="section-badge">
+                Contact Us
+            </span>
+            <h1 class="section-title mt-3">
+                Get In Touch
+
+            </h1>
+
+            <p class="section-description">
+                Have a question or need help?
+                We'd love to hear from you.
+            </p>
+
+
+        </div>
+        <div class="row g-5 align-items-stretch">
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="contact-info h-100">
+                    <h3>Let's Talk</h3>
+
+
+                    <p class="contact-text">
+                        Whether you have a question about our products,
+                        your order, or anything else, our team is ready
+                        to help.
+                    </p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-house-fill text-primary"></i>
+                        </div>
+                        <div>
+                            <h6>
+                                Address
+                            </h6>
+
+                            <p>
+                                Hyderabad, Telangana, India
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope-fill text-primary"></i>
+
+                        </div>
+                        <div>
+                            <h6>Email</h6>
+                            <p>
+                                support&#64;productstore.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone-fill text-primary"></i>
+                        </div>
+
+                        <div>
+                            <h6>
+                                Phone
+                            </h6>
+
+                            <p>
+                                +91 98765 43210
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contact-map">
+
+                        <iframe
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=78.394%2C17.440%2C78.430%2C17.470&layer=mapnik&marker=17.455%2C78.412"
+                            loading="lazy" title="ProductStore Location">
+                        </iframe>
+
+                    </div>
+
+                    <div class="map-link">
+                        <a href="https://www.openstreetmap.org/?mlat=17.455&mlon=78.412#map=15/17.455/78.412"
+                            target="_blank">
+                            View Larger Map
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Contact Form -->
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
+
+                <div class="contact-form">
+
+                    <h3>
+                        Send Us a Message
+                    </h3>
+
+
+                    <form
+  #contactForm="ngForm"
+  (ngSubmit)="onSubmit(contactForm)"
+  novalidate
+>
+
+  <!-- ================= NAME ================= -->
+  <div class="mb-3">
+
+    <label for="name" class="form-label">
+      Full Name
+    </label>
+
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      placeholder="Enter your full name"
+
+      ngModel
+      #name="ngModel"
+
+      required
+      minlength="3"
+      maxlength="50"
+      pattern="^[A-Za-z]+(?: [A-Za-z]+)*$"
+
+      [class.is-valid]="name.valid && (name.dirty || name.touched)"
+      [class.is-invalid]="name.invalid && (name.dirty || name.touched)"
+
+      (copy)="$event.preventDefault()"
+      (paste)="$event.preventDefault()"
+      (cut)="$event.preventDefault()"
+    >
+
+    <!-- Validation -->
+    <div
+      class="invalid-feedback"
+      *ngIf="name.invalid && (name.dirty || name.touched)"
+    >
+
+      <div *ngIf="name.errors?.['required']">
+        Full name is required.
+      </div>
+
+      <div *ngIf="name.errors?.['minlength']">
+        Name must be at least 3 characters.
+      </div>
+
+      <div *ngIf="name.errors?.['maxlength']">
+        Name cannot exceed 50 characters.
+      </div>
+
+      <div *ngIf="name.errors?.['pattern']">
+        Please enter a valid name using letters and spaces only.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= EMAIL ================= -->
+  <div class="mb-3">
+
+    <label for="email" class="form-label">
+      Email Address
+    </label>
+
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      placeholder="Enter your email"
+
+      ngModel
+      #email="ngModel"
+
+      required
+      maxlength="100"
+      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+      [class.is-valid]="email.valid && (email.dirty || email.touched)"
+      [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
+
+      (copy)="$event.preventDefault()"
+      (paste)="$event.preventDefault()"
+      (cut)="$event.preventDefault()"
+    >
+
+    <!-- Validation -->
+    <div
+      class="invalid-feedback"
+      *ngIf="email.invalid && (email.dirty || email.touched)"
+    >
+
+      <div *ngIf="email.errors?.['required']">
+        Email address is required.
+      </div>
+
+      <div *ngIf="email.errors?.['pattern']">
+        Please enter a valid email address.
+      </div>
+
+      <div *ngIf="email.errors?.['maxlength']">
+        Email cannot exceed 100 characters.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= SUBJECT ================= -->
+  <div class="mb-3">
+
+    <label for="subject" class="form-label">
+      Subject
+    </label>
+
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+      class="form-control"
+      placeholder="Enter subject"
+
+      ngModel
+      #subject="ngModel"
+
+      required
+      minlength="5"
+      maxlength="100"
+      pattern="^[A-Za-z0-9][A-Za-z0-9 ,.!?'-]*$"
+
+      [class.is-valid]="subject.valid && (subject.dirty || subject.touched)"
+      [class.is-invalid]="subject.invalid && (subject.dirty || subject.touched)"
+
+      (copy)="$event.preventDefault()"
+      (paste)="$event.preventDefault()"
+      (cut)="$event.preventDefault()"
+    >
+
+    <!-- Validation -->
+    <div
+      class="invalid-feedback"
+      *ngIf="subject.invalid && (subject.dirty || subject.touched)"
+    >
+
+      <div *ngIf="subject.errors?.['required']">
+        Subject is required.
+      </div>
+
+      <div *ngIf="subject.errors?.['minlength']">
+        Subject must be at least 5 characters.
+      </div>
+
+      <div *ngIf="subject.errors?.['maxlength']">
+        Subject cannot exceed 100 characters.
+      </div>
+
+      <div *ngIf="subject.errors?.['pattern']">
+        Please enter a valid subject.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= MESSAGE ================= -->
+  <div class="mb-4">
+
+    <label for="message" class="form-label">
+      Message
+    </label>
+
+    <textarea
+      id="message"
+      name="message"
+      class="form-control"
+      rows="5"
+      placeholder="Write your message..."
+
+      ngModel
+      #message="ngModel"
+
+      required
+      minlength="10"
+      maxlength="500"
+      pattern="^[A-Za-z0-9][A-Za-z0-9 ,.!?'\n-]*$"
+
+      [class.is-valid]="message.valid && (message.dirty || message.touched)"
+      [class.is-invalid]="message.invalid && (message.dirty || message.touched)"
+
+      (copy)="$event.preventDefault()"
+      (paste)="$event.preventDefault()"
+      (cut)="$event.preventDefault()"
+    ></textarea>
+
+    <!-- Validation -->
+    <div
+      class="invalid-feedback"
+      *ngIf="message.invalid && (message.dirty || message.touched)"
+    >
+
+      <div *ngIf="message.errors?.['required']">
+        Message is required.
+      </div>
+
+      <div *ngIf="message.errors?.['minlength']">
+        Message must be at least 10 characters.
+      </div>
+
+      <div *ngIf="message.errors?.['maxlength']">
+        Message cannot exceed 500 characters.
+      </div>
+
+      <div *ngIf="message.errors?.['pattern']">
+        Please enter a valid message.
+      </div>
+
+    </div>
+
+    <!-- Character count -->
+    <small class="text-muted">
+      {{ message.value?.length || 0 }}/500 characters
+    </small>
+
+  </div>
+
+
+  <!-- ================= SUBMIT ================= -->
+  <button
+    type="submit"
+    class="send-btn"
+   
+  >
+    Send Message
+  </button>
+
+</form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

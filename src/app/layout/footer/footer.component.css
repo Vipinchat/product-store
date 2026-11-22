@@ -1,0 +1,162 @@
+/* ================= FOOTER ================= */
+
+.footer {
+  background-color: #212529;
+  color: #ffffff;
+  padding-top: 60px;
+}
+
+/* Brand */
+
+.footer-brand {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  color: #adb5bd;
+  line-height: 1.7;
+  max-width: 350px;
+}
+
+/* Footer Heading */
+
+.footer-heading {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Links */
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+/* Social Links */
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #343a40;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #0d6efd;
+  transform: translateY(-3px);
+}
+
+/* Contact */
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  color: #adb5bd;
+
+  margin-bottom: 15px;
+}
+
+.contact-info i {
+  color: #0d6efd;
+  font-size: 18px;
+}
+
+/* Footer Bottom */
+
+.footer-bottom {
+  margin-top: 50px;
+  padding: 20px 0;
+
+  border-top: 1px solid #343a40;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #adb5bd;
+  font-size: 14px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: #adb5bd;
+  text-decoration: none;
+}
+
+.footer-bottom-links a:hover {
+  color: #ffffff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding-top: 45px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}
+
+
+
+
+

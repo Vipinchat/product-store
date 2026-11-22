@@ -1,0 +1,1444 @@
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  width: 100%;
+  
+}
+
+.carousel-indicators {
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+#productCarousel .carousel-indicators > button[data-bs-target] {
+  box-sizing: border-box;
+  flex: 0 0 12px;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-clip: border-box;
+  opacity: 0.8;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+}
+
+#productCarousel .carousel-indicators > button[data-bs-target].active {
+  background-color:#0d6efd;
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.carousel-inner {
+   aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 100%;
+  position: relative;
+}
+
+.carousel-image {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.carousel-image--product {
+  object-position: center;
+}
+
+.carousel-caption {
+  z-index: 2;
+  bottom: 20%;
+  right: auto;
+  left: 8%;
+  width: min(44%, 560px);
+  padding: 0;
+  text-align: left;
+  color: #111111;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.carousel-item.active .carousel-caption {
+  animation: hero-copy-in 600ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #111111;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.hero-kicker i {
+  color: #ffd84d;
+  font-size: 1.3rem;
+  text-shadow: none;
+}
+
+.carousel-caption h1 {
+  margin-bottom: 12px;
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.04;
+}
+
+.carousel-caption h1 span {
+  color: #ffd84d;
+}
+
+.carousel-caption p {
+  max-width: 36rem;
+  margin-bottom: 22px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.carousel-caption .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #111111;
+  background-color: #ffd84d;
+  border-color: #ffd84d;
+  text-shadow: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.carousel-caption .btn:hover,
+.carousel-caption .btn:focus-visible {
+  color: #111111;
+  background-color: #ffc938;
+  border-color: #ffc938;
+}
+
+.carousel-caption .btn i {
+  font-size: 1rem;
+  transition: transform 180ms ease;
+}
+
+.carousel-caption .btn:hover i {
+  transform: translate(2px, -2px);
+}
+
+.carousel-item--phone .hero-kicker i,
+.carousel-item--phone .carousel-caption h1 span {
+  color: #8ef7c8;
+  text-shadow: 0 0 18px rgba(142, 247, 200, 0.45);
+}
+
+.carousel-item--audio .hero-kicker i,
+.carousel-item--audio .carousel-caption h1 span {
+  color: #ffb39c;
+  text-shadow: 0 0 18px rgba(255, 179, 156, 0.45);
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-inner {
+    height: clamp(250px, 72vw, 320px);
+  }
+
+  .carousel-caption {
+    bottom: 14%;
+    left: 6%;
+    width: 82%;
+  }
+
+  .carousel-caption h1 {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .hero-kicker {
+    gap: 6px;
+    margin-bottom: 7px;
+    font-size: 0.58rem;
+  }
+
+  .hero-kicker i {
+    font-size: 0.95rem;
+  }
+
+  .carousel-caption .btn {
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .carousel-caption p {
+    display: none;
+  }
+}
+
+
+
+
+/* ================= CATEGORY SECTION ================= */
+
+.categories-section {
+  background-color: #f8f9fa;
+}
+
+
+/* Shared card finish */
+
+.category-card,
+.product-card,
+.feature-card {
+  border-left: 4px solid transparent;
+  border-image: linear-gradient(180deg, #0d6efd 0%, #20c997 100%) 1;
+  box-shadow: 0 14px 32px rgba(13, 110, 253, 0.14),
+    0 5px 12px rgba(33, 37, 41, 0.08);
+}
+
+.category-card:hover,
+.product-card:hover,
+.feature-card:hover {
+  box-shadow: 0 18px 38px rgba(13, 110, 253, 0.2),
+    0 8px 16px rgba(33, 37, 41, 0.12);
+}
+
+
+/* Section Heading */
+
+.categories-section h2 {
+  color: #212529;
+  font-size: 32px;
+}
+
+
+/* Category Card */
+
+.category-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  height: 100%;
+}
+
+
+/* Hover Effect */
+
+.category-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.10);
+
+  border-color: #0d6efd;
+}
+
+
+/* Icon */
+
+.category-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #eaf3ff;
+
+  color: #0d6efd;
+
+  font-size: 32px;
+
+  transition: all 0.3s ease;
+}
+
+.category-icon svg,
+.feature-icon svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-icon svg,
+.feature-card:hover .feature-icon svg {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+
+/* Icon Hover */
+
+.category-card:hover .category-icon {
+  background-color: #0d6efd;
+  color: #ffffff;
+
+  transform: scale(1.08);
+}
+
+
+/* Category Name */
+
+.category-title {
+  margin-bottom: 5px;
+
+  font-weight: 600;
+
+  color: #212529;
+}
+
+
+
+/* ================= FEATURED PRODUCTS ================= */
+
+.featured-section {
+  background-color: #ffffff;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+.product-image {
+  height: 230px;
+  padding: 25px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f8f9fa;
+}
+
+.product-image img {
+  height: 180px;
+  width: 100%;
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.08);
+}
+
+.product-spark {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: #0d6efd;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.28;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-card:hover .product-spark {
+  opacity: 0.75;
+  transform: rotate(45deg) scale(1.1);
+}
+
+.product-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  height: 42px;
+  overflow: hidden;
+}
+
+.rating {
+  color: #f5a623;
+  font-size: 14px;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/* ================= SPECIAL OFFER ================= */
+
+.offer-section {
+  background-color: #f8f9fa;
+}
+
+.offer-banner {
+
+  padding: 60px 50px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    135deg,
+    #0d6efd,
+    #084298
+  );
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+/* Badge */
+
+.offer-badge {
+
+  display: inline-block;
+
+  padding: 7px 14px;
+
+  border-radius: 50px;
+
+  background-color: rgba(255, 255, 255, 0.15);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* Heading */
+
+.offer-title {
+
+  font-size: 40px;
+
+  font-weight: 700;
+
+  max-width: 600px;
+}
+
+
+/* Description */
+
+.offer-description {
+
+  font-size: 17px;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  max-width: 550px;
+
+}
+
+
+/* Offer Icon */
+
+.offer-icon {
+  width: 180px;
+  height: 180px;
+  margin: auto;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.12);
+
+  animation: floatingOffer 3s ease-in-out infinite;
+}
+
+.offer-svg {
+  width: 130px;
+  height: 130px;
+}
+@keyframes floatingOffer {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+/* Discount */
+
+.discount-text {
+
+  margin-top: 15px;
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+.discount-text strong {
+
+  font-size: 35px;
+
+  margin: 0 5px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .offer-banner {
+
+    padding: 40px 25px;
+
+  }
+
+  .offer-title {
+
+    font-size: 30px;
+
+  }
+
+  .offer-description {
+
+    font-size: 15px;
+
+  }
+
+}
+
+/* ================= WHY CHOOSE US ================= */
+
+.why-us-section {
+  background-color: #ffffff;
+}
+
+.why-us-section h2 {
+  color: #212529;
+  font-size: 32px;
+}
+
+/* Feature Card */
+
+.feature-card {
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+  border-color: #0d6efd;
+}
+
+/* Icon */
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #eaf3ff;
+  color: #0d6efd;
+
+  font-size: 30px;
+
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background-color: #0d6efd;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* Title */
+
+.feature-title {
+  font-weight: 600;
+  color: #212529;
+}
+
+/* Description */
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter-section {
+  background-color: #f8f9fa;
+}
+
+.newsletter-box {
+  position: relative;
+  padding: 55px 50px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+}
+
+.newsletter-art {
+  position: absolute;
+  top: 34px;
+  right: 38px;
+  width: 82px;
+  height: auto;
+  fill: #eaf3ff;
+  stroke: #0d6efd;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(7deg);
+  opacity: 0.9;
+}
+
+/* Badge */
+
+.newsletter-badge {
+  display: inline-block;
+  padding: 7px 14px;
+
+  border-radius: 50px;
+
+  background-color: #eaf3ff;
+  color: #0d6efd;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Title */
+
+.newsletter-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #212529;
+}
+
+/* Description */
+
+.newsletter-description {
+  max-width: 520px;
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Input */
+
+.newsletter-form .form-control {
+  height: 52px;
+  padding-left: 18px;
+  border-radius: 8px 0 0 8px;
+}
+
+.newsletter-form .btn {
+  padding: 0 24px;
+  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .newsletter-box {
+    padding: 35px 25px;
+  }
+
+  .newsletter-art {
+    top: 20px;
+    right: 22px;
+    width: 58px;
+  }
+
+  .newsletter-title {
+    font-size: 28px;
+  }
+
+  .newsletter-form .input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-form .form-control {
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-form .btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+}
+
+
+.category-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.category-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+
+  animation: category-scroll 20s linear infinite;
+}
+
+.category-item {
+  width: 200px;
+  flex-shrink: 0;
+  margin: 10px;
+}
+
+
+/* Continuous Right → Left */
+@keyframes category-scroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 12px));
+  }
+
+}
+
+
+/* Hover → Pause */
+.category-slider:hover .category-track {
+  animation-play-state: paused;
+}
+
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+
+  isolation: isolate;
+  margin: 10px;
+}
+
+
+/* =========================================
+   🌊 MAIN MOVING WAVE
+========================================= */
+
+.category-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180%;
+  height: 180%;
+
+  top: -40%;
+  left: -40%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(13, 110, 253, 0.05) 40%,
+      rgba(13, 110, 253, 0.16) 48%,
+      rgba(32, 201, 151, 0.14) 52%,
+      rgba(13, 110, 253, 0.08) 58%,
+      transparent 70%
+    );
+
+  transform: rotate(15deg);
+
+  animation: waveMove 4s ease-in-out infinite;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   ✨ LIGHT SHIMMER
+========================================= */
+
+.category-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -20%;
+  left: -100%;
+
+  width: 55%;
+  height: 140%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+
+  transform: rotate(15deg);
+
+  animation: shimmerMove 4.5s ease-in-out infinite;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================
+   🌊 WAVE ANIMATION
+========================================= */
+
+@keyframes waveMove {
+
+  0% {
+    transform: translate(-35%, -10%) rotate(15deg);
+  }
+
+  25% {
+    transform: translate(-5%, 5%) rotate(15deg);
+  }
+
+  50% {
+    transform: translate(25%, -5%) rotate(15deg);
+  }
+
+  75% {
+    transform: translate(55%, 5%) rotate(15deg);
+  }
+
+  100% {
+    transform: translate(90%, -10%) rotate(15deg);
+  }
+
+}
+
+
+/* =========================================
+   ✨ SHIMMER ANIMATION
+========================================= */
+
+@keyframes shimmerMove {
+
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    left: 120%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   💫 ICON FLOATING EFFECT
+========================================= */
+
+.category-icon {
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   💎 CARD GLOW
+========================================= */
+
+.category-card {
+  box-shadow:
+    0 14px 32px rgba(13, 110, 253, 0.14),
+    0 5px 12px rgba(33, 37, 41, 0.08);
+}
+
+
+/* =========================================
+   🚀 HOVER = MORE DYNAMIC
+========================================= */
+
+.category-card:hover {
+  transform: translateY(-10px) scale(1.02);
+
+  box-shadow:
+    0 20px 45px rgba(13, 110, 253, 0.22),
+    0 8px 20px rgba(32, 201, 151, 0.15);
+
+  border-color: #0d6efd;
+}
+
+
+/* Speed up wave on hover */
+
+.category-card:hover::before {
+  animation-duration: 2s;
+}
+
+
+/* Speed up shimmer */
+
+.category-card:hover::after {
+  animation-duration: 2.2s;
+}
+
+
+/* =========================================
+   🎨 DIFFERENT TIMING FOR EACH CARD
+========================================= */
+
+.category-item:nth-child(2) .category-card::before,
+.category-item:nth-child(2) .category-card::after {
+  animation-delay: 0.5s;
+}
+
+.category-item:nth-child(3) .category-card::before,
+.category-item:nth-child(3) .category-card::after {
+  animation-delay: 1s;
+}
+
+.category-item:nth-child(4) .category-card::before,
+.category-item:nth-child(4) .category-card::after {
+  animation-delay: 1.5s;
+}
+
+.category-item:nth-child(5) .category-card::before,
+.category-item:nth-child(5) .category-card::after {
+  animation-delay: 2s;
+}
+
+.category-item:nth-child(6) .category-card::before,
+.category-item:nth-child(6) .category-card::after {
+  animation-delay: 2.5s;
+}
+
+
+/* =========================================
+   📱 MOBILE - SLIGHTLY SOFTER
+========================================= */
+
+@media (max-width: 768px) {
+
+  .category-card::before {
+    animation-duration: 5s;
+  }
+
+  .category-card::after {
+    animation-duration: 5.5s;
+  }
+
+}
+
+/* =========================================
+   OFFER BANNER
+========================================= */
+
+.offer-banner {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(0, 200, 255, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(0, 120, 255, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #071a3d,
+      #0d6efd,
+      #073b8f
+    );
+
+  border-radius: 28px;
+  padding: 70px 60px;
+}
+
+
+/* =========================================
+   AI WAVE BACKGROUND
+========================================= */
+
+.ai-wave-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+  z-index: 0;
+
+  opacity: 0.9;
+}
+
+
+.ai-waves {
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+
+/* =========================================
+   WAVE BASE
+========================================= */
+
+.wave {
+  fill: none;
+  stroke-linecap: round;
+
+  transform-origin: center;
+}
+
+
+/* =========================================
+   GLOW WAVE
+========================================= */
+
+.wave-glow {
+  stroke: rgba(0, 255, 255, 0.18);
+  stroke-width: 35;
+
+  filter: blur(15px);
+
+  animation:
+    waveMove 7s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   MAIN WAVE
+========================================= */
+
+.wave-one {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 3;
+
+  filter:
+    drop-shadow(0 0 8px rgba(0, 255, 255, 0.8));
+
+  animation:
+    waveMove 6s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   SECOND WAVE
+========================================= */
+
+.wave-two {
+  stroke: rgba(0, 255, 255, 0.38);
+  stroke-width: 2;
+
+  filter:
+    drop-shadow(0 0 7px rgba(0, 255, 255, 0.7));
+
+  animation:
+    waveMoveReverse 8s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   THIN AI WAVE
+========================================= */
+
+.wave-three {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1.5;
+
+  stroke-dasharray: 10 15;
+
+  animation:
+    waveDash 5s linear infinite,
+    waveMove 9s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   WAVE MOVEMENT
+========================================= */
+
+@keyframes waveMove {
+
+  0% {
+    transform: translateX(-25px) translateY(8px) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(10px) translateY(-8px) scaleY(1.08);
+  }
+
+  100% {
+    transform: translateX(35px) translateY(5px) scaleY(0.95);
+  }
+
+}
+
+
+@keyframes waveMoveReverse {
+
+  0% {
+    transform: translateX(30px) translateY(-5px);
+  }
+
+  50% {
+    transform: translateX(-15px) translateY(10px);
+  }
+
+  100% {
+    transform: translateX(-40px) translateY(-5px);
+  }
+
+}
+
+
+@keyframes waveDash {
+
+  to {
+    stroke-dashoffset: -100;
+  }
+
+}
+
+
+/* =========================================
+   AI PARTICLES
+========================================= */
+
+.ai-dot {
+  fill: #ffffff;
+
+  filter:
+    drop-shadow(
+      0 0 8px #00ffff
+    );
+
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+
+.dot-one {
+  animation-delay: 0s;
+}
+
+.dot-two {
+  animation-delay: 1s;
+}
+
+.dot-three {
+  animation-delay: 2s;
+}
+
+.dot-four {
+  animation-delay: 3s;
+}
+
+
+@keyframes particleFloat {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(10px) scale(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-15px) scale(1.3);
+  }
+
+}
+
+
+/* =========================================
+   CONTENT ABOVE WAVES
+========================================= */
+
+.offer-banner .container,
+.offer-banner .row,
+.offer-banner > .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.offer-icon {
+  position: relative;
+  z-index: 2;
+
+  animation: iconFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes iconFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+/* =========================================
+   NEWSLETTER MAIL SVG
+========================================= */
+
+.newsletter-art {
+  width: 85px;
+  height: auto;
+
+  display: block;
+  margin-bottom: 20px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+
+  color: #0d6efd;
+
+  transform-origin: center center;
+}
+
+
+/* =========================================
+   ROLLING ANIMATION
+========================================= */
+
+.rolling-mail {
+  opacity: 0;
+  transform: translateX(-180px) rotate(-360deg);
+}
+
+
+/* AOS section visible hone ke baad */
+
+[data-aos="fade-right"].aos-animate .rolling-mail {
+
+  animation:
+    mailRoll 1.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+}
+
+
+@keyframes mailRoll {
+
+  0% {
+    opacity: 0;
+    transform:
+      translateX(-180px)
+      rotate(-360deg);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translateX(0)
+      rotate(0deg);
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rolling-mail {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+.feature-icon,
+.feature-title,
+.feature-card p {
+  position: relative;
+  z-index: 1;
+}
+
+
+.feature-wave {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.6;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #fff;
+}
+
+/* Left Top Color Border */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 4px;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    #4facfe,
+    #00c6ff,
+    #d946ef
+  );
+  border-radius: 0 10px 10px 0;
+}
+
+/* Left Bottom Color Border */
+.feature-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  width: 4px;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    #ff9966,
+    #ff5e62,
+    #a855f7
+  );
+  border-radius: 0 10px 10px 0;
+}

@@ -1,0 +1,393 @@
+
+<p-toast></p-toast>
+
+<p-confirmDialog></p-confirmDialog>
+
+
+<div class="py-3">
+
+    <div class="wishlist-header">
+
+        <!-- HEADER TOP -->
+
+        <div class="wishlist-header-content">
+
+            <div class="wishlist-title-section">
+
+                <div class="wishlist-breadcrumb">
+                    <span>Home</span>
+                    <i class="pi pi-angle-right"></i>
+                    <span class="active">Wishlist</span>
+                </div>
+
+                <h2>
+                    My Wishlist
+                </h2>
+
+                <p>
+                    Manage and organize your favourite products.
+                </p>
+
+            </div>
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="wishlist-header-actions">
+
+                <div class="wishlist-product-count">
+
+                    <i class="pi pi-heart"></i>
+
+                    <div>
+                        <strong>
+                            {{ wishListItems.length }}
+                        </strong>
+
+                        <small>Saved Products</small>
+                    </div>
+
+                </div>
+
+                <button
+                    *ngIf="wishListItems.length > 0"
+                    pButton
+                    type="button"
+                    label="Clear Wishlist"
+                    icon="pi pi-trash"
+                    class="wishlist-clear-btn"
+                    (click)="clearWishList()">
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MULTICOLOR ACCENT -->
+
+        <div class="wishlist-accent">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- EMPTY CART -->
+
+<div *ngIf="wishListItems.length === 0"
+     class="empty-cart text-center py-5 mb-4">
+
+    <i class="bi-cart empty-icon"></i>
+
+    <h3 class="mt-3">
+        Your cart is empty
+    </h3>
+
+    <p class="text-muted">
+        Looks like you haven't added anything yet.
+    </p>
+
+    <button
+        pButton
+        label="Continue Shopping"
+        icon="pi pi-arrow-left"
+        routerLink="/products">
+    </button>
+
+</div>
+
+
+<!-- WISHLIST TABLE -->
+
+<div *ngIf="wishListItems.length > 0"
+     class="row g-4 mb-4">
+
+    <div class="col-lg-12">
+
+        <div class="cart-card">
+
+            <!-- TABLE HEADER -->
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+
+                <span class="fw-semibold">
+
+                    {{ wishListItems.length }} Products
+
+                </span>
+
+                <span class="text-muted">
+
+                    Wishlist Summary
+
+                </span>
+
+            </div>
+
+
+            <p-table
+                #dt
+                [value]="wishListItems"
+                [globalFilterFields]="['title', 'category']"
+                [paginator]="true"
+                [rows]="5"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [showCurrentPageReport]="true"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
+                responsiveLayout="scroll"
+                styleClass="p-datatable-sm"
+                class="mb-4">
+
+
+                <!-- TABLE HEADER -->
+
+                <ng-template pTemplate="header">
+
+                    <tr>
+
+                        <th pSortableColumn="title">
+
+                            Product
+
+                            <p-sortIcon field="title"></p-sortIcon>
+
+                        </th>
+
+
+                        <th pSortableColumn="price">
+
+                            Price
+
+                            <p-sortIcon field="price"></p-sortIcon>
+
+                        </th>
+
+
+                        <th>
+
+                            Quantity
+
+                        </th>
+
+
+                        <th>
+
+                            Total
+
+                        </th>
+
+
+                        <th>
+
+                            Action
+
+                        </th>
+
+                    </tr>
+
+                </ng-template>
+
+
+                <!-- TABLE BODY -->
+
+                <ng-template pTemplate="body" let-item>
+
+                    <tr>
+
+                        <!-- PRODUCT -->
+
+                        <td>
+
+                            <div class="product-info">
+
+                                <img
+                                    [src]="item.thumbnail || item.image"
+                                    [alt]="item.title"
+                                    class="product-image">
+
+                                <div>
+
+                                    <div class="product-title">
+
+                                        {{ item.title }}
+
+                                    </div>
+
+                                    <small class="text-muted">
+
+                                        {{ item.category }}
+
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <!-- PRICE -->
+
+                        <td>
+
+                            <span class="fw-semibold">
+
+                                ${{ item.price | number:'1.2-2' }}
+
+                            </span>
+
+                        </td>
+
+
+                        <!-- QUANTITY -->
+
+                        <td>
+
+                            <div class="quantity-control">
+
+                                <!-- DECREASE -->
+
+                                <button
+                                    pButton
+                                    type="button"
+                                    icon="pi pi-minus"
+                                    class="p-button-sm p-button-text"
+                                    [disabled]="item.quantity <= 1"
+                                    (click)="decreaseQuantity(item.id)">
+                                </button>
+
+
+                                <!-- QUANTITY VALUE -->
+
+                                <span class="fw-semibold">
+
+                                    {{ item.quantity }}
+
+                                </span>
+
+
+                                <!-- INCREASE -->
+
+                                <button
+                                    pButton
+                                    type="button"
+                                    icon="pi pi-plus"
+                                    class="p-button-sm p-button-text"
+                                    (click)="increaseQuantity(item.id)">
+                                </button>
+
+                            </div>
+
+                        </td>
+
+
+                        <!-- INDIVIDUAL TOTAL -->
+
+                        <td>
+
+                            <span class="fw-bold text-success">
+
+                                ${{ getItemTotal(item) | number:'1.2-2' }}
+
+                            </span>
+
+                        </td>
+
+
+                        <!-- ACTION -->
+
+                        <td>
+
+                            <button
+                                pButton
+                                type="button"
+                                icon="pi pi-trash"
+                              
+                                class="p-button-rounded p-button-text p-button-danger"
+                                pTooltip="Remove Product"
+                                tooltipPosition="top"
+                                (click)="removeItem(item.id)"
+                                class="text-light">
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </ng-template>
+
+
+                <!-- GRAND TOTAL -->
+
+                <ng-template pTemplate="footer">
+
+                    <tr>
+
+                        <td colspan="3" class="text-end fw-bold">
+
+                            Grand Total:
+
+                        </td>
+
+                        <td class="fw-bold text-success">
+
+                            ${{ totalPrice() | number:'1.2-2' }}
+
+                        </td>
+
+                        <td></td>
+
+                    </tr>
+
+                </ng-template>
+
+
+                <!-- EMPTY MESSAGE -->
+
+                <ng-template pTemplate="emptymessage">
+
+                    <tr>
+
+                        <td colspan="5" class="text-center py-4">
+
+                            No products found.
+
+                        </td>
+
+                    </tr>
+
+                </ng-template>
+
+            </p-table>
+
+
+            <!-- CART SUMMARY -->
+
+            <div class="d-flex justify-content-end align-items-center mt-3">
+
+                <div class="cart-summary text-end">
+
+                    <span class="text-muted">
+                        Total Amount
+                    </span>
+
+                    <h3 class="fw-bold text-success mb-0">
+
+                        ${{ totalPrice() | number:'1.2-2' }}
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

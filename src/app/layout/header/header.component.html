@@ -1,0 +1,106 @@
+<header class="mb-5" 
+        data-aos="fade-right"
+        data-aos-duration="3000"
+        data-aos-once="false" >
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+
+      <!-- Logo -->
+      <div class="aos" data-aos="fade-right" data-aos-delay="500">
+      <a class="navbar-brand fw-bold d-flex align-items-center "
+       routerLink="/home">
+
+        <img src="assets/product_store_logo.png" height="50" width="50" alt="ProductStore Logo">
+       Product<span class="text-primary">Store</span>
+      </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar -->
+      <div class="collapse navbar-collapse"
+        data-aos="fade-left" data-aos-delay="500" id="mainNavbar">
+
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          <!-- Main Navigation -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }">
+              <i class="bi bi-house-door-fill me-1"></i>
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/products" routerLinkActive="active">
+              <i class="bi bi-grid-fill me-1"></i>
+              Products
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="active">
+              <i class="bi bi-envelope-fill me-1"></i>
+              Contact
+            </a>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">
+              <i class="bi bi-person-circle me-1"></i>
+              Login
+            </a>
+          </li> -->
+
+
+          <!-- EXTRA SPACE -->
+          <li class="nav-item nav-separator"></li>
+
+
+          <!-- Wishlist -->
+          <li class="nav-item">
+            <a class="nav-action wishlist-action" routerLink="/wishlist" routerLinkActive="active">
+
+              <span class="nav-action-icon">
+                <i class="bi bi-heart-fill"></i>
+
+                <span class="action-badge wishlist-badge">
+
+                 {{wishlist.wishlistCount$ | async}}
+                </span>
+              </span>
+
+              <span>Wishlist</span>
+            </a>
+          </li>
+
+
+          <!-- Cart -->
+          <li class="nav-item ms-2">
+            <a class="nav-action cart-action" routerLink="/cart" routerLinkActive="active">
+
+              <span class="nav-action-icon">
+                <i class="bi bi-cart-fill"></i>
+
+                <span class="action-badge cart-badge">
+                 {{cartCount$ | async}}
+                </span>
+              </span>
+
+              <span>Cart</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+</header>

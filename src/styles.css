@@ -1,1 +1,228 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+
+/* =====================================
+   COMMON SWEETALERT DESIGN
+===================================== */
+
+.custom-swal {
+    position: relative !important;
+    overflow: hidden !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 30px 28px !important;
+    background: #ffffff !important;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.18),
+        0 8px 20px rgba(99, 102, 241, 0.10) !important;
+}
+
+/* =====================================
+   SUCCESS - VIBRANT EMERALD
+===================================== */
+
+.custom-swal.success-border {
+    border-left: 7px solid linear-gradient(135deg, #00d6a0, #00a878) !important;
+    border-right: 7px solid linear-gradient(135deg, #00d6a0, #00a878) !important;
+    box-shadow:
+        0 15px 40px rgba(0, 201, 141, 0.22),
+        0 5px 15px rgba(0, 201, 141, 0.12) !important;
+}
+
+/* =====================================
+   ERROR - VIBRANT ROSE
+===================================== */
+
+.custom-swal.error-border {
+    border-left: 7px solid #ff3158 !important;
+    border-right: 7px solid #ff3158 !important;
+
+    box-shadow:
+        0 15px 40px rgba(255, 49, 88, 0.22),
+        0 5px 15px rgba(255, 49, 88, 0.12) !important;
+}
+
+/* =====================================
+   WARNING - AMBER ORANGE
+===================================== */
+
+.custom-swal.warning-border {
+    border-top: 7px solid #ffad0a !important;
+
+    box-shadow:
+        0 15px 40px rgba(255, 173, 10, 0.22),
+        0 5px 15px rgba(255, 173, 10, 0.12) !important;
+}
+
+/* =====================================
+   INFO - ELECTRIC BLUE
+===================================== */
+
+.custom-swal.info-border {
+    border-top: 7px solid #08b5ff !important;
+
+    box-shadow:
+        0 15px 40px rgba(8, 181, 255, 0.22),
+        0 5px 15px rgba(8, 181, 255, 0.12) !important;
+}
+
+/* =====================================
+   CONFIRM - VIBRANT PURPLE
+===================================== */
+
+.custom-swal.confirm-border {
+    border-top: 2px solid #8b5cf6 !important;
+
+    box-shadow:
+        0 15px 40px rgba(139, 92, 246, 0.24),
+        0 5px 15px rgba(139, 92, 246, 0.12) !important;
+}
+
+/* =====================================
+   TITLE
+===================================== */
+
+.custom-swal .swal2-title {
+    color: #172033 !important;
+    font-size: 25px !important;
+    font-weight: 750 !important;
+    letter-spacing: -0.5px;
+}
+
+/* MESSAGE */
+.custom-swal .swal2-html-container {
+    color: #64748b !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+/* ICON SIZE */
+.custom-swal .swal2-icon {
+    transform: scale(1.05);
+}
+
+/* =====================================
+   OK BUTTON
+===================================== */
+
+.custom-swal .swal2-confirm {
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 11px 30px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15) !important;
+}
+
+.custom-swal .swal2-confirm:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+}
+
+/* CANCEL BUTTON */
+.custom-swal .swal2-cancel {
+    border-radius: 10px !important;
+    padding: 11px 25px !important;
+    font-weight: 600 !important;
+    transition: all 0.25s ease !important;
+}
+
+.custom-swal .swal2-cancel:hover {
+    transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 576px) {
+    .custom-swal {
+        width: calc(100% - 32px) !important;
+        padding: 24px 18px !important;
+        border-radius: 16px !important;
+    }
+
+    .custom-swal .swal2-title {
+        font-size: 22px !important;
+    }
+
+    .custom-swal .swal2-html-container {
+        font-size: 14px !important;
+    }
+}
+
+
+.swal-success-btn {
+    background: linear-gradient(135deg, #00d6a0, #00a878) !important;
+}
+
+.swal-error-btn {
+    background: linear-gradient(135deg, #ff5277, #ed174c) !important;
+}
+
+.swal-warning-btn {
+    background: linear-gradient(135deg, #ffc247, #f08c00) !important;
+}
+
+.swal-info-btn {
+    background: linear-gradient(135deg, #16c7ff, #087cf5) !important;
+}
+
+.swal-confirm-btn {
+    background: linear-gradient(135deg, #a78bfa, #7045e8) !important;
+}
+
+.swal-cancel-btn {
+    background: #eef2f7 !important;
+    color: #334155 !important;
+}
+
+
+
+
+
+.custom-swal .swal2-icon {
+    border-width: 4px !important;
+    transform: scale(1.05);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+}
+
+/* SUCCESS ICON */
+.custom-swal.success-border .swal2-icon.swal2-success {
+    background:   #00c98d !important;
+    border: none !important;
+    color: #e6fff5;
+}
+
+/* ERROR ICON */
+.custom-swal.error-border .swal2-icon.swal2-error {
+    background:#ff3158 !important;
+    border: none !important;
+    color: #e6fff5;
+   
+}
+
+/* WARNING ICON */
+.custom-swal.warning-border .swal2-icon.swal2-warning {
+    background: #ffad0a  !important;
+    border: none !important;
+    color: #e6fff5;
+}
+
+/* INFO ICON */
+.custom-swal.info-border .swal2-icon.swal2-info {
+    background: #08b5ff !important;
+     border: none !important;
+    color: #e6fff5;
+}
+
+/* QUESTION / CONFIRM ICON */
+.custom-swal.confirm-border .swal2-icon.swal2-question {
+    background:  #8b5cf6 !important;
+    border: none !important;
+    color: #e6fff5;
+    
+}
